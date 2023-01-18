@@ -1,7 +1,7 @@
 # LINE bot
 
 LINE botのサンプルをローカルマシンで動かす方法をまとめています。  
-プログラム言語は[Ruby](https://www.ruby-lang.org/ja/)を使っています。  
+プログラミング言語は[Ruby](https://www.ruby-lang.org/ja/)を使っています。  
 `app.rb`は、[LINE Messaging API SDK for Ruby](https://github.com/line/line-bot-sdk-ruby)の[Synopsis](https://github.com/line/line-bot-sdk-ruby#synopsis)のまんまです。
 
 
