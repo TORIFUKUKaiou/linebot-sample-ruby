@@ -13,7 +13,7 @@ LINE botのサンプルをローカルマシンで動かす方法をまとめて
 今回初めてRubyを使う人は、Rubyの環境構築から行います。  
 一派的にrubyはrbenvで管理する方法が知られています。 
 詳しくは[この記事](https://nishinatoshiharu.com/manage-ruby-with-rbenv/)などを参照するといいと思います。   
-あらかじめ[Homebrew](https://brew.sh/index_ja)がインストールされている必要がああります。
+あらかじめ[Homebrew](https://brew.sh/index_ja)がインストールされている必要があります。
 ```shell
 # rbenvをbrewでインストール
 $ brew update
@@ -95,17 +95,12 @@ Messaging APIを使うときは、これの設定が`無効`である必要が�
 ボットアプリには、APIを呼び出すための`チャネルアクセストークン`と、LINEプラットフォームからWebhookペイロードを受け取るための`Webhook URL`が必要です。  
 
 ## LINEBotのデータをdotenvで設定する
-1. `.env`ファイルを作成してください。
-    ```shell
-    touch .env
-    ```
-
-2. `.env`ファイルでLINEBotのデータを宣言してください。
-    ```
-    LINE_CHANNEL_ID=[チャネル基本設定/基本情報/チャネルID]
-    LINE_CHANNEL_SECRET=[チャネル基本設定/基本情報/チャネルシークレット]
-    LINE_CHANNEL_TOKEN=[先ほど発行したチャネルアクセストークン]
-    ```
+`.env`ファイルでLINEBotのデータを宣言してください。
+```
+LINE_CHANNEL_ID=[チャネル基本設定/基本情報/チャネルID]
+LINE_CHANNEL_SECRET=[チャネル基本設定/基本情報/チャネルシークレット]
+LINE_CHANNEL_TOKEN=[先ほど発行したチャネルアクセストークン]
+```
 ## [Webhook URLを設定する](https://developers.line.biz/ja/docs/messaging-api/building-bot/#setting-webhook-url)
 
 1. 先ほどNgorkに払い出された`Forwarding`のURLをコピーしてください。 
