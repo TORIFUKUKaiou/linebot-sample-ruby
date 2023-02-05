@@ -9,13 +9,12 @@ LINE botのサンプルをローカルマシンで動かす方法をまとめて
 
 
 # Installing / Getting started
-## 環境構築
-### [Ruby](https://www.ruby-lang.org/ja/)
+## [Ruby](https://www.ruby-lang.org/ja/)
 ```shell
 ruby -v 
 ```
 
-### [Ngrok](https://ngrok.com/)の導入、実行
+## [Ngrok](https://ngrok.com/)の導入、実行
 ローカルサーバーで動かせるよう、Ngrokを導入します。
 ```shell
 # Ngrokをインストール
@@ -75,9 +74,15 @@ Messaging APIを使うときは、これの設定が`無効`である必要が�
 # [ボットを作成する](https://developers.line.biz/ja/docs/messaging-api/building-bot/)
 ボットアプリには、APIを呼び出すための`チャネルアクセストークン`と、LINEプラットフォームからWebhookペイロードを受け取るための`Webhook URL`が必要です。  
 
+## LINEBotのデータをdotenvで設定する
+```
+LINE_CHANNEL_ID=[チャネル基本設定/基本情報/チャネルID]
+LINE_CHANNEL_SECRET=[チャネル基本設定/基本情報/チャネルシークレット]
+LINE_CHANNEL_TOKEN=[先ほど発行したチャネルアクセストークン]
+```
 ## [Webhook URLを設定する](https://developers.line.biz/ja/docs/messaging-api/building-bot/#setting-webhook-url)
 
-1. 先ほどNgorkに払い出された`Forwarding`のURLをコピー 
+1. 先ほどNgorkに払い出された`Forwarding`のURLをコピーしてください。 
 ![ngorkの実行結果](images/ngork_output.png "ngrok")
 例: <https://ecba-106-185-151-251.jp.ngrok.io/callback>  
 `.ngrok.io`より前の部分は`ngrok http 4567`の都度変わります。
@@ -90,8 +95,16 @@ Messaging APIを使うときは、これの設定が`無効`である必要が�
 
 もしWebhook settingsの`検証`がうまくいかない場合は、ブラウザで`http://127.0.0.1:4567/`や`http://127.0.0.1:4567/inoki-says`にアクセスしてみてください。ここにアクセスできない場合はどこかで間違っています。なにかヒントが見つかるかも知れませんので迷わずアクセスしてみてください。
 
-# [Docker](https://www.docker.com/) + [Ngrok](https://ngrok.com/) で動かす
+# [Sinatra](https://sinatrarb.com/) + [Ngrok](https://ngrok.com/) で動かす
+```shell
+# 特に指定しなければ Port 4567 で起動する
+ruby app.rb
+# Sinatra のポート番号に合わせて ngrok を起動する
+ngrok http 4567
+```
 
+
+# [Docker](https://www.docker.com/) + [Ngrok](https://ngrok.com/) で動かす
 ```bash
 docker build -t my-linebot-ruby-app .
 
@@ -99,8 +112,6 @@ docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e LINE_CHANNEL_ID="165
 
 ngrok http 4567
 ```
-
-
 
 
 # WindowsにインストールしたRubyで直接動かす
