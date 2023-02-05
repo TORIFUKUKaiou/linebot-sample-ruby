@@ -9,12 +9,12 @@ LINE botのサンプルをローカルマシンで動かす方法をまとめて
 
 
 # Installing / Getting started
-## [Ruby](https://www.ruby-lang.org/ja/)
+### [Ruby](https://www.ruby-lang.org/ja/)
 ```shell
 ruby -v 
 ```
 
-## [Ngrok](https://ngrok.com/)の導入、実行
+### [Ngrok](https://ngrok.com/)の導入、実行
 ローカルサーバーで動かせるよう、Ngrokを導入します。
 ```shell
 # Ngrokをインストール
@@ -23,7 +23,7 @@ brew install ngrok/ngrok/ngrok
 ngrok http 4567
 ```
 
-## [LINE Developers](https://developers.line.biz/ja/)準備
+### [LINE Developers](https://developers.line.biz/ja/)準備
 LINE APIを使用するために、LINE Developersに設定が必要です。
 <details><summary>LINE Developersコンソールにログインする</summary>
   
