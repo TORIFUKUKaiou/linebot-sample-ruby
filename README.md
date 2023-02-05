@@ -9,7 +9,7 @@ LINE botのサンプルをローカルマシンで動かす方法をまとめて
 
 
 # Installing / Getting started
-### [Ruby](https://www.ruby-lang.org/ja/)
+## [Ruby](https://www.ruby-lang.org/ja/)
 今回初めてRubyを使う人は、Rubyの環境構築から行います。  
 一派的にrubyはrbenvで管理する方法が知られています。 
 詳しくは[この記事](https://nishinatoshiharu.com/manage-ruby-with-rbenv/)などを参照するといいと思います。   
@@ -26,14 +26,18 @@ $ rbenv versions
 $ vim ~/.zshrc
 　→ eval "$(rbenv init -)" を追加
 
-# sourceコマンドでシェルの設定を読み込み直sす
+# sourceコマンドでシェルの設定を読み込み直す
 $ source ~/.zshrc
 
 # which rubyでrbenv配下のrubyが参照されていればOK
 $ which ruby
+
+# rbenv管理下にRubyをインストール
+$ rbenv install -l # インストール可能なバージョンの一覧を確認
+$ rbenv install 3.2.0 # バージョンを指定してRubyをインストールする
 ```
 
-### [Ngrok](https://ngrok.com/)の導入、実行
+## [Ngrok](https://ngrok.com/)の導入、実行
 ローカルサーバーで動かせるよう、Ngrokを導入します。
 ```shell
 # Ngrokをインストール
@@ -42,7 +46,24 @@ brew install ngrok/ngrok/ngrok
 ngrok http 4567
 ```
 
-### [LINE Developers](https://developers.line.biz/ja/)準備
+## プロジェクトの準備
+1. 任意のディレクトリにこのリポジトリを clone してください。
+2. clone したディレクトリに移動する  
+    ```shell
+    $ cd [任意のディレクトリ]/linebot-sample-ruby
+    ```
+3. このプロジェクトで使用する Ruby のバージョンを指定してください。
+    ```shell
+    $ rbenv local 3.2.0
+    $ rbenv version # 確認
+    ```
+4. Bundler を使って gem をローカルにインストールしてください。
+    ```shell
+    $ bundle install --path=vendor/bundle
+    $ bundle list # 確認  
+    ```
+
+## [LINE Developers](https://developers.line.biz/ja/)準備
 LINE APIを使用するために、LINE Developersに設定が必要です。
 <details><summary>LINE Developersコンソールにログインする</summary>
   
@@ -99,10 +120,10 @@ LINE_CHANNEL_TOKEN = [先ほど発行したチャネルアクセストークン]
 ## [Sinatra](https://sinatrarb.com/) + [Ngrok](https://ngrok.com/) で動かす
 ```shell
 # 特に指定しなければ Port 4567 で起動する（ターミナル1）
-ruby app.rb
+$ bundle exec ruby app.rb
 
 # Sinatra のポート番号に合わせて ngrok を起動する（ターミナル2）
-ngrok http 4567
+$ ngrok http 4567
 ```
 
 ## [Webhook URLを設定する](https://developers.line.biz/ja/docs/messaging-api/building-bot/#setting-webhook-url)
@@ -120,6 +141,9 @@ ngrok http 4567
 
 もしWebhook settingsの`検証`がうまくいかない場合は、ブラウザで`http://127.0.0.1:4567/`や`http://127.0.0.1:4567/inoki-says`にアクセスしてみてください。ここにアクセスできない場合はどこかで間違っています。なにかヒントが見つかるかも知れませんので迷わずアクセスしてみてください。
 
+## LINEでテスト
+ここまでできたら、オウム返しのLINEBotができているはずです。
+![ngorkの実行結果](images/line_talk.png)
 
 # WindowsにインストールしたRubyで直接動かす
 [WindowsのRubyのインストール手順](https://web-camp.io/magazine/archives/15051#Wtejyunn)などを参考に、Windowsに[Ruby Installer](https://rubyinstaller.org/)をインストールして演習を行なってください。  
