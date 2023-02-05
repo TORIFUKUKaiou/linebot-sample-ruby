@@ -5,22 +5,26 @@ LINE botのサンプルをローカルマシンで動かす方法をまとめて
 `app.rb`は、[LINE Messaging API SDK for Ruby](https://github.com/line/line-bot-sdk-ruby)の[Synopsis](https://github.com/line/line-bot-sdk-ruby#synopsis)のまんまです。
 
 # 概要
-
+![全体像](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F552343%2F13ab399f-3ece-7963-d614-b13deb4bb7c7.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=f5f32418f98163568c13cacd8e69aaa7)
 
 
 # Installing / Getting started
 ### [Ruby](https://www.ruby-lang.org/ja/)
 今回初めてRubyを使う人は、Rubyの環境構築から行います。  
-一派的にrubyはrbenvで管理する方法が知られています。  
+一派的にrubyはrbenvで管理する方法が知られています。 
+詳しくは[この記事](https://nishinatoshiharu.com/manage-ruby-with-rbenv/)などを参照するといいと思います。   
 あらかじめ[Homebrew](https://brew.sh/index_ja)がインストールされている必要がああります。
 ```shell
 # rbenvをbrewでインストール
 $ brew update
 $ brew install rbenv
 
-# シェルの設定ファイル（.bashrcや.zshrc）にeval "$(rbenv init -)"を追加
+# 確認（下記コマンドが通ればインストールはOK）
+$ rbenv versions
+
+# シェルの設定ファイル（.bashrcや.zshrc）に「eval "$(rbenv init -)"」を追加
 $ vim ~/.zshrc
-+ eval "$(rbenv init -)"
+　→ eval "$(rbenv init -)" を追加
 
 # sourceコマンドでシェルの設定を読み込み直sす
 $ source ~/.zshrc
@@ -28,6 +32,7 @@ $ source ~/.zshrc
 # which rubyでrbenv配下のrubyが参照されていればOK
 $ which ruby
 ```
+
 
 ### [Ngrok](https://ngrok.com/)の導入、実行
 ローカルサーバーで動かせるよう、Ngrokを導入します。
@@ -125,18 +130,13 @@ ngrok http 4567
 ```
 
 
-# [Docker](https://www.docker.com/) + [Ngrok](https://ngrok.com/) で動かす
-```bash
-docker build -t my-linebot-ruby-app .
-
-docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e LINE_CHANNEL_ID="165...yours" -e LINE_CHANNEL_SECRET="82a...yours" -e LINE_CHANNEL_TOKEN="wTq+...yours" -p 4567:4567 my-linebot-ruby-app
-
-ngrok http 4567
-```
-
-
 # WindowsにインストールしたRubyで直接動かす
+[WindowsのRubyのインストール手順](https://web-camp.io/magazine/archives/15051#Wtejyunn)などを参考に、Windowsに[Ruby Installer](https://rubyinstaller.org/)をインストールして演習を行なってください。  
+Ngorkは[この記事](https://note.com/code82/n/nc805dca1da33)などを参考に導入してください。
 
-TBD  
-Windowsに[Ruby Installer](https://rubyinstaller.org/)でインストールして動かす手順。 
-Windows持っているなら書いて欲しい。 
+
+# Links
+- [Messaging API - LINE Developers](https://developers.line.biz/ja/docs/messaging-api/)
+- [line/line-bot-sdk-ruby: LINE Messaging API SDK for Ruby - GitHub](https://github.com/line/line-bot-sdk-ruby)
+- [Sinatra: Sinatra is a DSL for quickly creating web applications in Ruby with minimal effort](http://sinatrarb.com/)
+- [ngrok - secure introspectable tunnels to localhost](https://ngrok.com/)
