@@ -143,7 +143,7 @@ $ ngrok http 4567
 
 ## LINEでテスト
 ここまでできたら、オウム返しのLINEBotができているはずです。
-![ngorkの実行結果](images/line_talk.png)
+![オウム返しデモ](images/line_talk.png)
 
 # WindowsにインストールしたRubyで直接動かす
 [WindowsのRubyのインストール手順](https://web-camp.io/magazine/archives/15051#Wtejyunn)などを参考に、Windowsに[Ruby Installer](https://rubyinstaller.org/)をインストールして演習を行なってください。  
