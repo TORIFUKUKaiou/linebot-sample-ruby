@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'line/bot'
+require 'dotenv'
+Dotenv.load
 
 set :bind, '0.0.0.0'
 
