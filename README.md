@@ -11,7 +11,7 @@ LINE botのサンプルをローカルマシンで動かす方法をまとめて
 # Installing / Getting started
 ## [Ruby](https://www.ruby-lang.org/ja/)
 今回初めてRubyを使う人は、Rubyの環境構築から行います。  
-一派的にrubyはrbenvで管理する方法が知られています。 
+一般的にrubyはrbenvで管理する方法が知られています。 
 詳しくは[この記事](https://nishinatoshiharu.com/manage-ruby-with-rbenv/)などを参照するといいと思います。   
 あらかじめ[Homebrew](https://brew.sh/index_ja)がインストールされている必要があります。
 ```shell
@@ -144,6 +144,14 @@ $ ngrok http 4567
 ## LINEでテスト
 ここまでできたら、オウム返しのLINEBotができているはずです。
 ![オウム返しデモ](images/line_talk.PNG)
+
+# [Docker](https://www.docker.com/) + [Ngrok](https://ngrok.com/) で動かす
+
+```bash
+docker build -t my-linebot-ruby-app .
+docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e LINE_CHANNEL_ID="165...yours" -e LINE_CHANNEL_SECRET="82a...yours" -e LINE_CHANNEL_TOKEN="wTq+...yours" -p 4567:4567 my-linebot-ruby-app
+ngrok http 4567
+```
 
 # WindowsにインストールしたRubyで直接動かす
 [WindowsのRubyのインストール手順](https://web-camp.io/magazine/archives/15051#Wtejyunn)などを参考に、Windowsに[Ruby Installer](https://rubyinstaller.org/)をインストールして演習を行なってください。  
