@@ -112,9 +112,9 @@ Messaging APIを使うときは、これの設定が`無効`である必要が�
 ## LINEBotのデータをdotenvで設定する
 `.env`ファイルでLINEBotのデータを宣言してください。
 ```
-LINE_CHANNEL_ID = [チャネル基本設定/基本情報/チャネルID]
-LINE_CHANNEL_SECRET = [チャネル基本設定/基本情報/チャネルシークレット]
-LINE_CHANNEL_TOKEN = [先ほど発行したチャネルアクセストークン]
+LINE_CHANNEL_ID=[チャネル基本設定/基本情報/チャネルID]
+LINE_CHANNEL_SECRET=[チャネル基本設定/基本情報/チャネルシークレット]
+LINE_CHANNEL_TOKEN=[先ほど発行したチャネルアクセストークン]
 ```
 
 ## [Sinatra](https://sinatrarb.com/) + [Ngrok](https://ngrok.com/) で動かす
@@ -149,7 +149,7 @@ $ ngrok http 4567
 
 ```bash
 docker build -t my-linebot-ruby-app .
-docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e LINE_CHANNEL_ID="165...yours" -e LINE_CHANNEL_SECRET="82a...yours" -e LINE_CHANNEL_TOKEN="wTq+...yours" -p 4567:4567 my-linebot-ruby-app
+docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp -p 4567:4567 my-linebot-ruby-app
 ngrok http 4567
 ```
 
