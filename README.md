@@ -146,7 +146,7 @@ $ ngrok http 4567
 ![オウム返しデモ](images/line_talk.PNG)
 
 # [Docker](https://www.docker.com/) + [Ngrok](https://ngrok.com/) で動かす
-
+まず、`.env`ファイルを[LINEBotのデータをdotenvで設定する](https://github.com/IshimotoTakara/linebot-sample-ruby/edit/main/README.md#linebot%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92dotenv%E3%81%A7%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B)と同じように環境変数を宣言してください。
 ```bash
 docker build -t my-linebot-ruby-app .
 docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp --env-file .env -p 4567:4567 my-linebot-ruby-app
