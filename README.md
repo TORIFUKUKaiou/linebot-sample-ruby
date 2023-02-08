@@ -130,11 +130,11 @@ $ ngrok http 4567
 
 1. 先ほどNgorkに払い出された`Forwarding`のURLをコピーしてください。 
 ![ngorkの実行結果](images/ngork_output.png "ngrok")
-例: <https://ecba-106-185-151-251.jp.ngrok.io/callback>  
 `.ngrok.io`より前の部分は`ngrok http 4567`の都度変わります。
 
 2. `Messaging API設定`タブの`Webhook URL`セッションで
 `1でコピーしたURL + /callback`を指定してください。  
+例: <https://ecba-106-185-151-251.jp.ngrok.io/callback>  
 ![webhookの設定](images/webhook_setting.png "webhook")
 `検証`をクリックして`成功`が返ってきたらOK。
 また、この時`Webhookの利用`が`ON`に設定してください。
@@ -149,7 +149,7 @@ $ ngrok http 4567
 
 ```bash
 docker build -t my-linebot-ruby-app .
-docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp -p 4567:4567 my-linebot-ruby-app
+docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp --env-file .env -p 4567:4567 my-linebot-ruby-app
 ngrok http 4567
 ```
 
