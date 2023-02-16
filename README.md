@@ -5,7 +5,7 @@ LINE botのサンプルをローカルマシンで動かす方法をまとめて
 
 
 # 概要
-![全体像](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F552343%2F13ab399f-3ece-7963-d614-b13deb4bb7c7.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=f5f32418f98163568c13cacd8e69aaa7)
+![全体像](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F552343%2F13ab399f-3ece-7963-d614-b13deb4bb7c7.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=f5f32418f98163568c13cacd8e69aaa7)  
 [いろいろなサービスを使ってLINEbotを作ろう【ngrok編】](https://qiita.com/mintak21/items/fe9234d4b6a98bfc841a#%E5%85%A8%E4%BD%93%E5%83%8F)より引用
 
 # Installing / Getting started
