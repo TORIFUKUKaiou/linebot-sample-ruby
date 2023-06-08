@@ -97,8 +97,7 @@ LINE Developersコンソールへの初回ログイン時は、開発者アカ�
 
 <details><summary>「応答メッセージ」と「あいさつメッセージ」の設定</summary>
   
-`Messaging API設定`タブの`LINE公式アカウント機能`セッションで`応答メッセージ`と`あいさつメッセージ`を`無効`に設定してください。  
-Messaging APIを使うときは、これの設定が`無効`である必要があります。
+`Messaging API設定`タブの`LINE公式アカウント機能`セッションで`応答メッセージ`と`あいさつメッセージ`を`無効`に設定しておくとよいでしょう。
 </details>
 
 <details><summary>チャネルアクセストークンの発行</summary>
