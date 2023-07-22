@@ -156,8 +156,18 @@ LINE_CHANNEL_TOKEN=[先ほど発行したチャネルアクセストークン]
 以下のコマンドで実行します。
 ```bash
 docker build -t my-linebot-ruby-app .
-docker run -d -v "$PWD":/usr/src/myapp -w /usr/src/myapp --env-file .env -p 4567:4567 my-linebot-ruby-app
+docker run -d --rm -v "$PWD":/usr/src/app -w /usr/src/app --env-file .env -p 4567:4567 my-linebot-ruby-app
 ngrok http 4567
+```
+
+## Dockerコンテナの止め方
+
+```bash
+$ docker ps
+CONTAINER ID   IMAGE                 COMMAND           CREATED         STATUS         PORTS                    NAMES
+<CONTAINER ID>   my-linebot-ruby-app   "ruby ./app.rb"   3 seconds ago   Up 2 seconds   0.0.0.0:4567->4567/tcp   infallible_nash
+
+$ docker stop <CONTAINER ID>
 ```
 
 # WindowsにインストールしたRubyで直接動かす
