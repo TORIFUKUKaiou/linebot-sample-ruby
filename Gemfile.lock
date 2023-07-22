@@ -2,24 +2,25 @@ GEM
   remote: https://rubygems.org/
   specs:
     dotenv (2.8.1)
-    line-bot-api (1.26.0)
+    line-bot-api (1.28.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    nio4r (2.5.8)
-    puma (6.0.2)
+    nio4r (2.5.9)
+    puma (6.3.0)
       nio4r (~> 2.0)
-    rack (2.2.6.2)
-    rack-protection (3.0.5)
+    rack (2.2.7)
+    rack-protection (3.0.6)
       rack
     ruby2_keywords (0.0.5)
-    sinatra (3.0.5)
+    sinatra (3.0.6)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.0.5)
+      rack-protection (= 3.0.6)
       tilt (~> 2.0)
-    tilt (2.0.11)
+    tilt (2.2.0)
 
 PLATFORMS
+  aarch64-linux
   x86_64-darwin-21
   x86_64-linux
 
@@ -30,4 +31,4 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
-   2.2.33
+   2.4.10
